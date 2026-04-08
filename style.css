@@ -107,8 +107,9 @@ body {
     background-image: 
     linear-gradient(
         to bottom, 
-        rgba(0, 0, 0, 0.0), /* Cor inicial (preto com 20% de opacidade) */
-        rgb(255, 0, 0, 0.3)  /* Cor final (preto com 80% de opacidade) */
+        rgba(235, 235, 235, 0), 
+        rgba(235, 235, 235, 0), 
+        rgba(133, 4, 4, 0.534)
     ),
     url(bg-yorkers.jpg);
     
