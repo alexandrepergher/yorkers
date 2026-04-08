@@ -1,0 +1,242 @@
+/* =========================================
+   Reset Básico e Configurações Globais
+   ========================================= */
+
+/* 1. Box Sizing e Reset de Margens/Paddings */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Garante que padding e bordas não aumentem a largura do elemento */
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Configurações Base do Body (Corpo da página) */
+body {
+    line-height: 1.6; /* Melhora a legibilidade do texto */
+    /* Pilha de fontes nativas modernas para carregamento rápido e visual limpo */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #333333; /* Cor de texto suave (não 100% preto) para descansar a vista */
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased; /* Suaviza a fonte no macOS/iOS */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. Comportamento Responsivo de Mídias */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%; /* Impede que imagens quebrem o layout em telas pequenas */
+    height: auto;
+}
+
+/* 4. Reset de Listas */
+ul,
+ol {
+    list-style: none; /* Remove as "bolinhas" e números padrão das listas */
+}
+
+/* 5. Herança de Tipografia em Formulários */
+input,
+button,
+textarea,
+select {
+    font: inherit; /* Faz com que campos de texto usem a mesma fonte do body */
+    color: inherit;
+}
+
+/* 6. Acessibilidade em Botões (remover outline em clique, manter no teclado) */
+button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+/* 7. Estilo Básico de Links */
+a {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    color: #0056b3; /* Azul padrão para links */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline; /* Retorna o sublinhado ao passar o mouse */
+    color: #003d82;
+}
+
+/* 8. Quebra de Texto Segura */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word; /* Evita que palavras muito longas vazem do contêiner */
+}
+
+/* =========================================
+   Estilos Iniciais do Layout (Baseados no HTML)
+   ========================================= */
+
+/* Oculta o link "Pular para o conteúdo" visualmente, mas o mantém para leitores de tela */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+
+
+
+/* =========================================
+   Estrutura e Layout (Mobile First)
+   ========================================= */
+
+
+/* --- Cabeçalho --- */
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: 
+    linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.0), /* Cor inicial (preto com 20% de opacidade) */
+        rgb(255, 0, 0, 0.3)  /* Cor final (preto com 80% de opacidade) */
+    ),
+    url(/site/bg-yorkers.jpg);
+    
+    /* Configurações padrão para a imagem cobrir o espaço e ficar centralizada */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Estilos extras para centralizar o texto dentro da div */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    color: white;
+    padding: 30px 0 30px;
+}
+
+
+
+a {
+    width: 100%;
+    border: 2px solid #fdff8e;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    color: #fdff8e;
+    font-weight: 700;
+    line-height: 1.2em;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    padding: 10px 0;
+}
+
+a:hover {
+color: #fdff8e;
+text-decoration: none;
+}
+
+svg {
+    width: 42px;
+    fill: #fdff8e;
+}
+
+/* --- Rodapé --- */
+footer {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    text-align: center;
+    justify-self: flex-end;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 30px 45px;
+    font-size: 1em;
+    gap: 20px;
+}
+
+p {
+    width: 100%;
+    font-size: .9em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* =========================================
+   Media Queries (Responsividade)
+   ========================================= */
+
+/* Dispositivos Médios (Tablets, a partir de 768px) */
+@media (min-width: 768px) {
+
+    header {
+        height: 60vh;
+        background-position: center;
+        margin: 0;
+
+    }
+    
+    section {
+        flex-direction: column !important;
+        font-size: 1.6em;
+        padding: 0 10% 30px;
+    }
+    p {
+            margin-bottom: 30px;
+        }
+
+    a {
+            padding: 35px 0;
+            margin-top: 50px;
+        }
+
+    footer {
+            font-size: 1.6em;
+        }
+
+}
+
+/* Dispositivos Grandes (Desktops, a partir de 1024px) */
+@media (min-width: 1024px) {
+
+    header {
+        height: 80vh;
+    }
+
+section {
+    font-size: 1.1em;
+    flex-direction: row !important;
+    gap: 50px;
+}
+    section p {
+        width: calc(100%-560px);
+    }
+
+    section a {
+        width: 560px;
+        height: 120px;
+        margin: 0 auto;
+    }
+
+    footer p {
+            font-size: 1em;
+        }
+    
+}
