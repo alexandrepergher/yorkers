@@ -110,7 +110,7 @@ body {
         rgba(0, 0, 0, 0.0), /* Cor inicial (preto com 20% de opacidade) */
         rgb(255, 0, 0, 0.3)  /* Cor final (preto com 80% de opacidade) */
     ),
-    url(/site/bg-yorkers.jpg);
+    url(bg-yorkers.jpg);
     
     /* Configurações padrão para a imagem cobrir o espaço e ficar centralizada */
     background-size: cover;
