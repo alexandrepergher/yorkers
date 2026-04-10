@@ -193,6 +193,8 @@ footer a {
 section {
     flex-direction: row;
     width: 80%;
+    justify-content: center;
+
 }
 
 section a {
