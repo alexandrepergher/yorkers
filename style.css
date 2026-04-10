@@ -105,7 +105,7 @@ header svg {
     height: auto;
 }
 
-a:hover {
+section a:hover, footer a:hover {
 color: #fdff8e;
 }
 
